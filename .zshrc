@@ -38,7 +38,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-# zinit snippet OMZP::archlinux
 # zinit snippet OMZP::aws
 # zinit snippet OMZP::kubectl
 # zinit snippet OMZP::kubectx
@@ -104,3 +103,6 @@ export PATH=$MAVEN_HOME/bin:$PATH
 
 # Support Golang
 export PATH=$PATH:/usr/local/go/bin
+
+# Update PATH
+export PATH=$PATH:/usr/sbin

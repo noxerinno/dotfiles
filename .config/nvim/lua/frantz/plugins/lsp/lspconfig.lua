@@ -160,6 +160,29 @@ return {
 					},
 				})
 			end,
+			-- Configure textlsp
+			["textlsp"] = function()
+				lspconfig["textlsp"].setup({
+					capabilities = capabilities,
+					filetypes = {
+						"markdown",
+						"json",
+						"yaml",
+					},
+					on_attach = function(client, bufnr)
+						-- Autocommande to disable textlsp for .txt files
+						vim.api.nvim_create_autocmd("FileType", {
+							pattern = "*.txt",
+							callback = function()
+								-- Check if the client is `textlsp`, if so disable it
+								if client.name == "textlsp" then
+									client.stop()
+								end
+							end,
+						})
+					end,
+				})
+			end,
 		})
 	end,
 }
