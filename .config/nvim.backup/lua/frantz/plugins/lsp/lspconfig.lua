@@ -6,6 +6,8 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
+	after = { "mason", "mason-lspconfig" },
+
 	config = function()
 		-- Import lspconfig plugin
 		local lspconfig = require("lspconfig")
@@ -146,17 +148,18 @@ return {
 				lspconfig["clangd"].setup({
 					cmd = {
 						"clangd",
-						"--background-index",
-						"-j=12",
-						"--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
-						"--clang-tidy",
-						"--clang-tidy-checks=*",
-						"--all-scopes-completion",
-						"--cross-file-rename",
-						"--completion-style=detailed",
-						"--header-insertion-decorators",
-						"--header-insertion=iwyu",
-						"--pch-storage=memory",
+						"--fallback-style=webkit",
+						-- "--background-index",
+						-- "-j=12",
+						-- "--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+						-- "--clang-tidy",
+						-- "--clang-tidy-checks=*",
+						-- "--all-scopes-completion",
+						-- "--cross-file-rename",
+						-- "--completion-style=detailed",
+						-- "--header-insertion-decorators",
+						-- "--header-insertion=iwyu",
+						-- "--pch-storage=memory",
 					},
 				})
 			end,
