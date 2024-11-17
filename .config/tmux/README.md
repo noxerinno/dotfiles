@@ -1,13 +1,13 @@
-#Tmux config
+# Tmux config
 
 This TMUX config is using Tmux Plugin Manager (TMP)
 
-##Requirements
+## Requirements
 
 You obviously need Tmux for everything that follows. To install it, follow [this instructions](https://github.com/tmux/tmux/wiki/Installing)
 You need Tmux version 1.9 or above. 
 
-##Instalation 
+## Instalation 
 
 To download [TMP](https://github.com/tmux-plugins/tpm), execute this command: 
 ```
